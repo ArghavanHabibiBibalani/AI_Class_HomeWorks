@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using DataStructures.Graphs.AdjacencyMapGraph;
 
 namespace AIClass
 {
@@ -11,10 +12,12 @@ namespace AIClass
 
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
-            foreach (string line in lines)
-            {
-                Console.WriteLine(line);
-            }
+            //foreach (string line in lines)
+            //{
+            //    Console.WriteLine(line);
+            //}
+
+            AdjacencyMapGraph<int, int> graph = new AdjacencyMapGraph<int, int>(false);
         }
     }
 
