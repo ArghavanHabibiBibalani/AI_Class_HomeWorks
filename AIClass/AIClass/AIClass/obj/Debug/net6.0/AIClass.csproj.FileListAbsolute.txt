@@ -1,0 +1,15 @@
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.AssemblyInfoInputs.cache
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.AssemblyInfo.cs
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.csproj.CoreCompileInputs.cache
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.sourcelink.json
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\bin\Debug\net6.0\AIClass.exe
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\bin\Debug\net6.0\AIClass.deps.json
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\bin\Debug\net6.0\AIClass.runtimeconfig.json
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\bin\Debug\net6.0\AIClass.dll
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\bin\Debug\net6.0\AIClass.pdb
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.dll
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\refint\AIClass.dll
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.pdb
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\AIClass.genruntimeconfig.cache
+D:\Repositories\AI_Class\AI_Class_HomeWorks\AIClass\AIClass\AIClass\obj\Debug\net6.0\ref\AIClass.dll

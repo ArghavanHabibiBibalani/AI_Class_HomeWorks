@@ -1,4 +1,5 @@
-﻿
+﻿using System.IO;
+
 namespace AIClass
 {
     internal class Program
@@ -8,6 +9,12 @@ namespace AIClass
         {
             string filePath = @"E:\University\AI\Tests\Test 1.txt";
 
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 
