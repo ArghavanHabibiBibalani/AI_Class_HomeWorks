@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "wN6979Wa/9o2tQRILX374n+1lzSpn631athVvhyVgUGSRhTJ9qj0tbVnvVKCio9BVau4vTbzKLUd0Atiw5/2Qg==",
+  "success": true,
+  "projectFilePath": "D:\\Repositories\\AI_Class\\AI_Class_HomeWorks\\AIClass\\AIClass\\AIClass\\AIClass.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.22\\microsoft.netcore.app.host.win-x64.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

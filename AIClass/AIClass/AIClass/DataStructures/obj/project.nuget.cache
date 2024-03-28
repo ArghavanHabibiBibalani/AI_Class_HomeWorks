@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "SyCaBl8xQEqm052obDs9np4R9vZTVq267QLmKZqohG4JCZCOuYEdfkefXgJtlQCeoRM9cIZP8m6SfGk3vrV3wQ==",
+  "success": true,
+  "projectFilePath": "D:\\Repositories\\Data structures\\DataStructures\\DataStructures\\DataStructures\\DataStructures.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.22\\microsoft.windowsdesktop.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.22\\microsoft.netcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.22\\microsoft.aspnetcore.app.ref.6.0.22.nupkg.sha512",
+    "C:\\Users\\Spino\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.22\\microsoft.netcore.app.host.win-x64.6.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
