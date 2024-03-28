@@ -12,12 +12,23 @@ namespace AIClass
 
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
-            //foreach (string line in lines)
-            //{
-            //    Console.WriteLine(line);
-            //}
+            foreach (string line in lines)
+            {
+                List<int> myList = line.Split('\t').Select(int.Parse).ToList(); // have unhandeled exeption
+                foreach(int i in myList)
+                {
+                    Console.WriteLine(i);
+                }
+            }
 
-            AdjacencyMapGraph<int, int> graph = new AdjacencyMapGraph<int, int>(false);
+            AdjacencyMapGraph<int, int> graph = new AdjacencyMapGraph<int, int>(false); //graph is not direcred.
+
+            
+
+
+
+
+
         }
     }
 
