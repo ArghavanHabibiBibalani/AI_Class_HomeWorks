@@ -89,5 +89,71 @@ namespace DataStructures.Lists.ArrayList
                 throw new IndexOutOfRangeException("Illigal Index: " + index);
             }
         }
+        public void QuickSortAscending()
+        {
+            QuickSortAscending(0, size - 1);
+        }
+        private void QuickSortAscending(int low, int high)
+        {
+            if (low < high)
+            {
+                int partitionIndex = PartitionAscending(low, high);
+                QuickSortAscending(low, partitionIndex - 1);
+                QuickSortAscending(partitionIndex + 1, high);
+            }
+        }
+        private int PartitionAscending(int low, int high)
+        {
+            E pivot = data[high];
+            int i = low - 1;
+
+            for (int j = low; j < high; j++)
+            {
+                if (Comparer<E>.Default.Compare(data[j], pivot) <= 0)
+                {
+                    i++;
+                    Swap(i, j);
+                }
+            }
+
+            Swap(i + 1, high);
+            return i + 1;
+        }
+        public void QuickSortDescending()
+        {
+            QuickSortDescending(0, size - 1);
+        }
+        private void QuickSortDescending(int low, int high)
+        {
+            if (low < high)
+            {
+                int partitionIndex = PartitionDescending(low, high);
+                QuickSortDescending(low, partitionIndex - 1);
+                QuickSortDescending(partitionIndex + 1, high);
+            }
+        }
+        private int PartitionDescending(int low, int high)
+        {
+            E pivot = data[high];
+            int i = low - 1;
+
+            for (int j = low; j < high; j++)
+            {
+                if (Comparer<E>.Default.Compare(data[j], pivot) >= 0)
+                {
+                    i++;
+                    Swap(i, j);
+                }
+            }
+
+            Swap(i + 1, high);
+            return i + 1;
+        }
+        private void Swap(int i, int j)
+        {
+            E temp = data[i];
+            data[i] = data[j];
+            data[j] = temp;
+        }
     }
 }
