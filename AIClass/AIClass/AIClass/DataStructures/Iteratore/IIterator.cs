@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Iteratore
 {
-    internal interface IIterator<E> : IEnumerator<E>
+    public interface IIterator<E> : IEnumerator<E>
     {
         public bool HasNext();
         public E Next();

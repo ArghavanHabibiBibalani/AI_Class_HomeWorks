@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Stacks.ArrayBasedStack
 {
-    internal class ArrayStack<E> : IStack<E>
+    public class ArrayStack<E> : IStack<E>
     {
         private int CAPACITY = 1000;
         private E[] data;

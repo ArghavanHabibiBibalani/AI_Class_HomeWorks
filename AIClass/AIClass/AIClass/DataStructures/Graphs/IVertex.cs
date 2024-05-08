@@ -8,6 +8,6 @@ namespace DataStructures.Graphs
 {
     public interface IVertex<V>
     {
-        V Vertex { get; }
+        V Vertex { get; set; }
     }
 }

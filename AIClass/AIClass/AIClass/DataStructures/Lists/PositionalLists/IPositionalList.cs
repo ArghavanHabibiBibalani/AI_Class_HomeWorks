@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Lists.PositionalLists
 {
-    internal interface IPositionalList<E>
+    public interface IPositionalList<E>
     {
         int Size();
         bool IsEmpty();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Lists.PositionalLists
 {
-    internal interface IPosition<E>
+    public interface IPosition<E>
     {
         E GetElement();
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Lists
 {
-    internal interface IList<E>
+    public interface IList<E>
     {
         int Size();
         bool IsEmpty();

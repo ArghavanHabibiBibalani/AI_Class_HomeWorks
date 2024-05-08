@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Graphs.AdjacencyMapGraph
 {
-    internal class InnerVertex<V, E> : IVertex<V>
+    public class InnerVertex<V, E> : IVertex<V>
     {
         private V element;
         private IPosition<IVertex<V>> position;
@@ -29,7 +29,8 @@ namespace DataStructures.Graphs.AdjacencyMapGraph
                 inComing = outGoing;
             }
         }
-        public V Vertex => element;
+
+        V IVertex<V>.Vertex { get => element; set => element = value; }
 
         public void setPosition(IPosition<IVertex<V>> p) 
         { 

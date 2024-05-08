@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Stacks
 {
-    internal interface IStack<E>
+    public interface IStack<E>
     {
         int Size();
         bool IsEmpty();

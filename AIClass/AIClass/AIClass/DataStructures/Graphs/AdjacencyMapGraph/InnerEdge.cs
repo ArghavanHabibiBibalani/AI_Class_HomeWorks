@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace DataStructures.Graphs.AdjacencyMapGraph
 {
-    internal class InnerEdge<V, E> : IEdge<E>
+    public class InnerEdge<V, E> : IEdge<E>
     {
         private E element;
         private IPosition<IEdge<E>> position;
@@ -34,5 +34,7 @@ namespace DataStructures.Graphs.AdjacencyMapGraph
             return position;
         }
         public E Edge => element;
+
+        E IEdge<E>.Edge { get => element; }
     }
 }

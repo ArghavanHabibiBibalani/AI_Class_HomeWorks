@@ -1,100 +1,73 @@
-﻿using DataStructures.Graphs;
+﻿using AIClass.DataStructures.Graphs;
+using DataStructures.Graphs;
 using DataStructures.Graphs.AdjacencyMapGraph;
 using DataStructures.Lists.ArrayList;
 using DataStructures.Queue.ArrayBasedQueue;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AIClass.AI.BlindSearch
 {
-    internal class BlindSearch<V, E>
+    public class BlindSearch<V, E> where V : IComparable<V>
     {
-        ArrayQueue<Data<V>> queue;
-        ArrayQueue<int> final;
-        //HashSet<IVertex<V>> visited;//defult class in c#
-        public BlindSearch()//tree get.
+        private ArrayQueue<Data<V>> queue;
+        private ArrayQueue<int> final;
+        //HashSet<IVertex<V>> visited;
+        public BlindSearch()
         {
             queue = new ArrayQueue<Data<V>>();
             final = new ArrayQueue<int>();
             //visited = new HashSet<IVertex<V>>();
         }
 
-        public bool BFS(IVertex<V> rootNode, V goalNode, AdjacencyMapGraph<V, E> graph, bool isAscending)
+        public bool BFS<V> (V rootNode, V goalNode, EdgeList<V> graph, bool isAscending)
         {
-            Data<V> _firstData = new Data<V>();
-            //Data<V> _addData = new Data<V>();
-            ArrayList<Data<V>> _data = new ArrayList<Data<V>>();
-         
-            _firstData.vertex = rootNode;
-            _firstData.VNF = true;
-            _firstData.VF = false;
+            HashSet<V> visited = new HashSet<V>(); // TO DO: if u can please write a class for hash.
+            ArrayQueue<V> queue = new ArrayQueue<V>(); 
 
-            queue.Enqueue(_firstData); //add to the queue
+            queue.Enqueue(rootNode);
+            visited.Add(rootNode);
 
-            if (goalNode.Equals(rootNode.Vertex))
+            while (queue.Size() > 0)
             {
-                return true;
-            }
+                V currentNode = queue.Dequeue();
 
-            while (!queue.IsEmpty())
-            {
-                var incomingEdges = graph.IncomingEdges(rootNode);
-                foreach (var edge in incomingEdges)
-                {
-                    Data<V> newData = new Data<V>();
-                    newData.vertex = (IVertex<V>)edge;
-                    newData.VNF = false;
-                    newData.VF = false;
-
-                    _data.Add(_data.Size(), newData);
-
-                }
-
-                var outgoingEdges = graph.OutgoingEdges(rootNode);
-                foreach (var edge in outgoingEdges)
-                {
-                    Data<V> newData = new Data<V>();
-                    newData.vertex = (IVertex<V>)edge;
-                    newData.VNF = false;
-                    newData.VF = false;
-
-                    _data.Add(_data.Size(), newData);
-
-                }
-
-                if (isAscending)
-                {
-                    _data.QuickSortAscending();
-                }
-                else
-                {
-                    _data.QuickSortDescending();
-                }
-
-                for (int j = 0; j < _data.Size(); j++)
-                {
-                    Data<V> newData = new Data<V>();
-                    newData.vertex = (IVertex<V>)_data.Get(j);
-                    newData.VNF = true;
-                    newData.VF = false;
-
-                    queue.Enqueue(newData);
-                } //add other datas to queue
-
-                if (goalNode.Equals(queue.First()))
-                {
+                if (currentNode.Equals(goalNode))
                     return true;
-                }
-                queue.First().VF = true;
-                queue.Dequeue();
-                
-            }
 
+                IEnumerable<V> neighbors = graph.GetNeighbors(currentNode);
+
+                foreach (V neighbor in neighbors)
+                {
+                    if (!visited.Contains(neighbor))
+                    {
+                        queue.Enqueue(neighbor);
+                        visited.Add(neighbor);
+                        Console.WriteLine($"Visited: {neighbor}");
+                    }
+
+                }
+            }
             return false;
         }
 
+        //public bool DepthFirstSearch<V>(V rootNode, V goalNode, EdgeList<V> graph, bool isFromLeft)
+        //{
+
+
+
+
+
+
+
+
+        //    return null;
+        //}
+
     }
 }
+

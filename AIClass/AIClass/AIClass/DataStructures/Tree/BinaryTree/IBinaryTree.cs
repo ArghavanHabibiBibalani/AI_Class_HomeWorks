@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Tree.BinaryTree
 {
-    internal interface IBinaryTree<E> : ITree<E>
+    public interface IBinaryTree<E> : ITree<E>
     {
         IPosition<E> Left(IPosition<E> position);
         IPosition<E> Right(IPosition<E> position);

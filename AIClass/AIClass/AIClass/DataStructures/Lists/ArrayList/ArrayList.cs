@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Lists.ArrayList
 {
-    internal class ArrayList<E> : IList<E>
+    public class ArrayList<E> : IList<E> where E : IComparable<E>
     {
         private static int CAPACITY = 16;
         private E[] data;
@@ -89,71 +89,107 @@ namespace DataStructures.Lists.ArrayList
                 throw new IndexOutOfRangeException("Illigal Index: " + index);
             }
         }
-        public void QuickSortAscending()
+        public void CountingSortDescending()
         {
-            QuickSortAscending(0, size - 1);
-        }
-        private void QuickSortAscending(int low, int high)
-        {
-            if (low < high)
-            {
-                int partitionIndex = PartitionAscending(low, high);
-                QuickSortAscending(low, partitionIndex - 1);
-                QuickSortAscending(partitionIndex + 1, high);
-            }
-        }
-        private int PartitionAscending(int low, int high)
-        {
-            E pivot = data[high];
-            int i = low - 1;
+            if (size == 0)
+                return;
+            E min = data[0];
+            E max = data[0];
+            Func<E, E, int> comparer = Comparer<E>.Default.Compare;
 
-            for (int j = low; j < high; j++)
+            foreach (E item in data)
             {
-                if (Comparer<E>.Default.Compare(data[j], pivot) <= 0)
+                if (comparer(item, min) < 0)
+                    min = item;
+                if (comparer(item, max) > 0)
+                    max = item;
+            }
+
+            List<KeyValuePair<E, int>> countList = new List<KeyValuePair<E, int>>();
+
+            foreach (E item in data)
+            {
+                bool found = false;
+                for (int i = 0; i < countList.Count; i++)
                 {
-                    i++;
-                    Swap(i, j);
+                    if (EqualityComparer<E>.Default.Equals(item, countList[i].Key))
+                    {
+                        countList[i] = new KeyValuePair<E, int>(countList[i].Key, countList[i].Value + 1);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    countList.Add(new KeyValuePair<E, int>(item, 1));
                 }
             }
 
-            Swap(i + 1, high);
-            return i + 1;
-        }
-        public void QuickSortDescending()
-        {
-            QuickSortDescending(0, size - 1);
-        }
-        private void QuickSortDescending(int low, int high)
-        {
-            if (low < high)
-            {
-                int partitionIndex = PartitionDescending(low, high);
-                QuickSortDescending(low, partitionIndex - 1);
-                QuickSortDescending(partitionIndex + 1, high);
-            }
-        }
-        private int PartitionDescending(int low, int high)
-        {
-            E pivot = data[high];
-            int i = low - 1;
+            List<E> sorted = new List<E>(size);
 
-            for (int j = low; j < high; j++)
+            for (int i = countList.Count - 1; i >= 0; i--)
             {
-                if (Comparer<E>.Default.Compare(data[j], pivot) >= 0)
+                for (int j = 0; j < countList[i].Value; j++)
                 {
-                    i++;
-                    Swap(i, j);
+                    sorted.Add(countList[i].Key);
                 }
             }
 
-            Swap(i + 1, high);
-            return i + 1;
+            for (int i = 0; i < size; i++)
+            {
+                data[i] = sorted[i];
+            }
         }
-        private void Swap(int i, int j)
+
+
+        public void CountingSortAscending()
         {
-            E temp = data[i];
-            data[i] = data[j];
-            data[j] = temp;
+            if (size == 0)
+                return;
+
+            E min = data[0];
+            E max = data[0];
+            Func<E, E, int> comparer = Comparer<E>.Default.Compare;
+
+            for (int i = 1; i < size; i++)
+            {
+                if (comparer(data[i], min) < 0)
+                    min = data[i];
+                if (comparer(data[i], max) > 0)
+                    max = data[i];
+            }
+
+            int range = Convert.ToInt32(max) - Convert.ToInt32(min) + 1;
+            int[] count = new int[range];
+
+            for (int i = 0; i < size; i++)
+            {
+                int index = Convert.ToInt32(data[i]) - Convert.ToInt32(min);
+                count[index]++;
+            }
+
+            for (int i = 1; i < range; i++)
+            {
+                count[i] += count[i - 1];
+            }
+
+            E[] temp = new E[size];
+
+            for (int i = size - 1; i >= 0; i--)
+            {
+                int index = Convert.ToInt32(data[i]) - Convert.ToInt32(min);
+                temp[count[index] - 1] = data[i];
+                count[index]--;
+            }
+
+            for (int i = 0; i < size; i++)
+            {
+                data[i] = temp[i];
+            }
         }
+
+
+
     }
 }

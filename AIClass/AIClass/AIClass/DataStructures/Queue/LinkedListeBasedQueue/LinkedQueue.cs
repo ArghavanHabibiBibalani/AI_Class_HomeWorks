@@ -2,7 +2,7 @@
 
 namespace DataStructures.Queue.LinkedListeBasedQueue
 {
-    internal class LinkedQueue<E> : IQueue<E>
+    public class LinkedQueue<E> : IQueue<E>
     {
         private ISinglyLinkedList<E> list;
 

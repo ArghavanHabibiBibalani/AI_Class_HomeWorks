@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.LinkedLists.SinglyLinkedList
 {
-    internal interface ISinglyLinkedList<E>
+    public interface ISinglyLinkedList<E>
     {
         int Size { get; }
         bool IsEmpty();

@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace DataStructures.Lists.PositionalLists.LinkesPositionalList
 {
-    internal class LinkedPositionalList<E> : IPositionalList<E>
+    public class LinkedPositionalList<E> : IPositionalList<E>
     {
 
         private class PositionalListNode<E>: IPosition<E>

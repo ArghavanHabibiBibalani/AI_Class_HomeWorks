@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Queue.ArrayBasedQueue
 {
-    internal class ArrayQueue<E> : IQueue<E>
+    public class ArrayQueue<E> : IQueue<E>
     {
         private E[] data;
         private int size = 0;
@@ -65,6 +65,11 @@ namespace DataStructures.Queue.ArrayBasedQueue
         public int Size()
         {
             return size;
+        }
+
+        public E Get(int index)
+        {
+            return data[index];
         }
     }
 }

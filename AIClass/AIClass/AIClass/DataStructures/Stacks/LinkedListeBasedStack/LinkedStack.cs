@@ -8,7 +8,7 @@ using DataStructures.LinkedLists.SinglyLinkedList;
 
 namespace DataStructures.Stacks.LinkedListeBasedStack
 {
-    internal class LinkedStack<E> : IStack<E>
+    public class LinkedStack<E> : IStack<E>
     {
         private IDoublyLinkedList<E> list = new DoublyLinkedList<E>();
 

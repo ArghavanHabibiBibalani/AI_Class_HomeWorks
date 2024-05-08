@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Queue
 {
-    internal interface IQueue<E>
+    public interface IQueue<E>
     {
         int Size();
         bool IsEmpty();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Tree
 {
-    internal interface ITree<E> : IEnumerable<E>
+    public interface ITree<E> : IEnumerable<E>
     {
         IPosition<E> Root { get; set; }
         IPosition<E> Parent(IPosition<E> ppsition);

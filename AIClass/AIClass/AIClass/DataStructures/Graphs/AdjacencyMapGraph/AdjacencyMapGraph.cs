@@ -1,5 +1,6 @@
 ﻿using DataStructures.Lists.PositionalLists.LinkesPositionalList;
 using DataStructures.Lists.PositionalLists;
+using AIClass.DataStructures.Graphs;
 
 namespace DataStructures.Graphs.AdjacencyMapGraph
 {
@@ -34,10 +35,13 @@ namespace DataStructures.Graphs.AdjacencyMapGraph
             return origin.GetOutgoing().Get(v);
         }
 
-        public IEnumerable<IEdge<E>> IncomingEdges(IVertex<V> v)
+        public IEnumerable<IEdge<E>> IncomingEdges(Vertex<V> v)
         {
-            InnerVertex<V, E> vert = (InnerVertex<V, E>)v;
-            return vert.GetIncoming().Values();
+            return GetIncomingEdgesForVertex(v);
+        }
+        private IEnumerable<IEdge<E>> GetIncomingEdgesForVertex(Vertex<V> v)
+        {
+            return new List<IEdge<E>>();
         }
 
         public int InDegree(IVertex<V> v)
@@ -118,9 +122,15 @@ namespace DataStructures.Graphs.AdjacencyMapGraph
 
         public IEnumerable<IEdge<E>> OutgoingEdges(IVertex<V> v)
         {
+            return GetOutgoingEdgesForVertex(v);
+        }
+
+        private IEnumerable<IEdge<E>> GetOutgoingEdgesForVertex(IVertex<V> v)
+        {
             InnerVertex<V, E> vert = (InnerVertex<V, E>)v;
             return vert.GetOutgoing().Values();
         }
+
 
         public void RemoveEdge(IEdge<E> e)
         {

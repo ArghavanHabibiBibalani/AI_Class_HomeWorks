@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AIClass.DataStructures.Graphs;
+using DataStructures.Graphs.AdjacencyMapGraph;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +21,7 @@ namespace DataStructures.Graphs
         int OutDegree(IVertex<V> v);
         int InDegree(IVertex<V> v);
         IEnumerable<IEdge<E>> OutgoingEdges(IVertex<V> v);
-        IEnumerable<IEdge<E>> IncomingEdges(IVertex<V> v);
+        IEnumerable<IEdge<E>> IncomingEdges(Vertex<V> v);
         IVertex<V> InsertVertex(V element);
         IEdge<E> InsertEdge(IVertex<V> u, IVertex<V> v, E element);
         void RemoveVertex(IVertex<V> v);
