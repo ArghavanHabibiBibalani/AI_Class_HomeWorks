@@ -3,6 +3,7 @@ using DataStructures.Graphs;
 using DataStructures.Graphs.AdjacencyMapGraph;
 using DataStructures.Lists.ArrayList;
 using DataStructures.Queue.ArrayBasedQueue;
+using DataStructures.Stacks.ArrayBasedStack;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -55,18 +56,39 @@ namespace AIClass.AI.BlindSearch
             return false;
         }
 
-        //public bool DepthFirstSearch<V>(V rootNode, V goalNode, EdgeList<V> graph, bool isFromLeft)
-        //{
+        public bool DFS<V>(V rootNode, V goalNode, EdgeList<V> graph, bool isFromLeft)
+        {
+            HashSet<V> visited = new HashSet<V>();
+            ArrayStack<V> stack = new ArrayStack<V>();
 
+            stack.Push(rootNode);
+            visited.Add(rootNode);
 
+            while (!stack.IsEmpty())
+            {
+                V currentNode = stack.Pop();
 
+                if (!visited.Contains(currentNode))
+                    visited.Add(currentNode); 
 
+                if (currentNode.Equals(goalNode))
+                    return true;
 
+                IEnumerable<V> neighbors = graph.GetNeighbors(currentNode);
+                foreach (V neighbor in neighbors)
+                {
+                    if (!visited.Contains(neighbor))
+                    {
+                        stack.Push(neighbor);
+                        visited.Add(neighbor);
+                        Console.WriteLine($"Visited: {neighbor}");
+                    }
+                }
+            }
 
+            return false;
+        }
 
-
-        //    return null;
-        //}
 
     }
 }

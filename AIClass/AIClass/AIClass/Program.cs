@@ -10,10 +10,10 @@ namespace AIClass
     {
         static void Main(string[] args)
         {
-            BFSMain();
+            result();
         }
 
-        private static void BFSMain()
+        private static void result()
         {
             string filePath = @"E:\University\AI\Tests\Test 1.txt";
 
@@ -56,6 +56,11 @@ namespace AIClass
             bool v = bs.BFS<int>(5, 10, edgeList, false);
 
             Console.WriteLine(v);
+
+            Console.WriteLine(" start DFS");
+
+            bool b = bs.DFS<int>(5, 10, edgeList, false);
+
         }
     }
 }
